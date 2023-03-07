@@ -32,8 +32,6 @@ describe("POST /realEstate", () => {
       .set("Authorization", `Bearer ${tokenMock.genToken(true, 1)}`)
       .send({ ...payload, categoryId: category.id });
 
-    console.log({ ...payload, categoryId: category.id });
-
     const expectResults = {
       status: 201,
       expectBody: { ...payload, category },
@@ -64,12 +62,6 @@ describe("POST /realEstate", () => {
         categoryId: category.id,
       });
 
-    console.log({
-      ...realEstateInfo,
-      address: addressInfo,
-      categoryId: category.id,
-    });
-
     const expectResults = {
       status: 201,
       expectBody: { ...realEstateInfo, category },
@@ -98,7 +90,6 @@ describe("POST /realEstate", () => {
       .post(baseUrl)
       .set("Authorization", `Bearer ${tokenMock.genToken(true, 1)}`)
       .send({ ...payload, categoryId: category.id });
-    console.log({ ...payload, categoryId: category.id });
 
     const expectResults = {
       status: 409,

@@ -11,12 +11,12 @@ export const newRealEstateSchema = z.object({
     city: z.string().max(20),
     state: z.string().max(2),
   }),
-  category: z.number().positive().nullish(),
+  categoryId: z.any().nullish(),
 });
 
 export const returnRealEstateSchema = z.object({
   id: z.number().positive(),
-  value: z.number(),
+  value: z.any(),
   size: z.number().positive(),
   category: z.object({
     id: z.number(),
